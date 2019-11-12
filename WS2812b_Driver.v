@@ -112,7 +112,7 @@ always @(posedge(clk)) begin
 					
 					if(bit_address < (LED_DATA_BUS_WIDTH) ) begin //latch the bit normally for each bits in the LED data
 	
-						if(led_data[23-bit_address] == 1) begin //bit in LED data is 1 Latch 1
+						if(led_data[LED_DATA_BUS_WIDTH-1-bit_address] == 1) begin //bit in LED data is 1 Latch 1
 						
 							if(clk_cnt < H1_CYC) dout<=1;
 							else dout<=0;
