@@ -289,7 +289,7 @@ DynCntModN #(.NBBITS(LED_ADDR_W),.POSEDG(1),.RESETLEVEL(1),.SETLEVEL(0)) led_add
 	.aReset(led_idle)
 ); 
 
-WS2812b_Driver #(.CLK_FREQ(CLK_FREQUENCY)) led_driver(
+WS2812b_Driver #(.CLK_FREQ(CLK_FREQUENCY),.LED_DATA_BUS_WIDTH(LED_DATA_W),.LED_ADDRESS_BUS_WIDTH(LED_DATA_W)) led_driver(
 	.clk(clk),
 	.sync(led_sync),
 	.data(led_data),
